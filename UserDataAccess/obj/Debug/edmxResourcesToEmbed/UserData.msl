@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="userInfoModelStoreContainer" CdmEntityContainer="userInfoEntities">
+    <EntitySetMapping Name="userDetails">
+      <EntityTypeMapping TypeName="userInfoModel.userDetail">
+        <MappingFragment StoreEntitySet="userDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DeleteUserDetails" FunctionName="userInfoModel.Store.sp_DeleteUserDetails" />
+    <FunctionImportMapping FunctionImportName="sp_InserUserDetails" FunctionName="userInfoModel.Store.sp_InserUserDetails" />
+    <FunctionImportMapping FunctionImportName="sp_SelectAllUserDetails" FunctionName="userInfoModel.Store.sp_SelectAllUserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="userInfoModel.sp_SelectAllUserDetails_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SelectUserDetails" FunctionName="userInfoModel.Store.sp_SelectUserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="userInfoModel.sp_SelectUserDetails_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UpdateUserDetails" FunctionName="userInfoModel.Store.sp_UpdateUserDetails" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDemo", "UserDemo\UserDemo.csproj", "{2860866B-0368-44C5-8C86-3F072DCB87AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDataAccess", "UserDataAccess\UserDataAccess.csproj", "{9B9D4375-D38E-499A-BD74-7FAC59C6433C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2860866B-0368-44C5-8C86-3F072DCB87AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2860866B-0368-44C5-8C86-3F072DCB87AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2860866B-0368-44C5-8C86-3F072DCB87AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2860866B-0368-44C5-8C86-3F072DCB87AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9D4375-D38E-499A-BD74-7FAC59C6433C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9D4375-D38E-499A-BD74-7FAC59C6433C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9D4375-D38E-499A-BD74-7FAC59C6433C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9D4375-D38E-499A-BD74-7FAC59C6433C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

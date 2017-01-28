@@ -1,0 +1,8 @@
+D:\MVC\UserDemo\UserDataAccess\bin\Debug\UserDataAccess.dll.config
+D:\MVC\UserDemo\UserDataAccess\bin\Debug\UserDataAccess.dll
+D:\MVC\UserDemo\UserDataAccess\bin\Debug\UserDataAccess.pdb
+D:\MVC\UserDemo\UserDataAccess\bin\Debug\EntityFramework.dll
+D:\MVC\UserDemo\UserDataAccess\bin\Debug\EntityFramework.xml
+D:\MVC\UserDemo\UserDataAccess\obj\Debug\UserDataAccess.csprojResolveAssemblyReference.cache
+D:\MVC\UserDemo\UserDataAccess\obj\Debug\UserDataAccess.dll
+D:\MVC\UserDemo\UserDataAccess\obj\Debug\UserDataAccess.pdb
