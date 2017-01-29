@@ -28,14 +28,14 @@ namespace UserDemo.Controllers
             return entities.sp_DeleteUserDetails(id).ToString();
         }
         [HttpPost]
-        public string Add(string name, decimal age, decimal salary, string designation, DateTime DOB)
+        public string Add(userDetail user)
         {
-            return entities.sp_InserUserDetails(name, age, salary, designation, DOB).ToString();
+            return entities.sp_InserUserDetails(user.name, user.age, user.salary, user.designation, user.DOB).ToString();
         }
         [HttpPut]
-        public string Put(decimal ID, string name, decimal age, decimal salary, string designation, DateTime DOB)
+        public string Put(userDetail user)
         {
-            return entities.sp_UpdateUserDetails(ID,name, age, salary, designation, DOB).ToString();
+            return entities.sp_UpdateUserDetails(user.ID,user.name, user.age, user.salary, user.designation, user.DOB).ToString();
         }
     }
 }
