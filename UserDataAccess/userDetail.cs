@@ -20,5 +20,6 @@ namespace UserDataAccess
         public Nullable<decimal> salary { get; set; }
         public string designation { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }
+        public string last_name { get; set; }
     }
 }

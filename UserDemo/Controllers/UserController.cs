@@ -30,12 +30,12 @@ namespace UserDemo.Controllers
         [HttpPost]
         public string Add(userDetail user)
         {
-            return entities.sp_InserUserDetails(user.name, user.age, user.salary, user.designation, user.DOB).ToString();
+            return entities.sp_InserUserDetails(user.name, user.age, user.salary, user.designation, user.DOB,user.last_name).ToString();
         }
         [HttpPut]
         public string Put(userDetail user)
         {
-            return entities.sp_UpdateUserDetails(user.ID,user.name, user.age, user.salary, user.designation, user.DOB).ToString();
+            return entities.sp_UpdateUserDetails(user.ID,user.name, user.age, user.salary, user.designation, user.DOB,user.last_name).ToString();
         }
     }
 }

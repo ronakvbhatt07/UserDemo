@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="userInfoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="userInfoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="userInfoModelStoreContainer">
           <EntitySet Name="userDetails" EntityType="userInfoModel.Store.userDetails" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -18,6 +18,7 @@
           <Property Name="salary" Type="numeric" />
           <Property Name="designation" Type="nvarchar" MaxLength="100" />
           <Property Name="DOB" Type="datetime" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Function Name="sp_DeleteUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="numeric" Mode="In" />
@@ -28,6 +29,7 @@
           <Parameter Name="salary" Type="numeric" Mode="In" />
           <Parameter Name="designation" Type="nvarchar" Mode="In" />
           <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="last_name" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_SelectAllUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_SelectUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -40,16 +42,16 @@
           <Parameter Name="salary" Type="numeric" Mode="In" />
           <Parameter Name="designation" Type="nvarchar" Mode="In" />
           <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="last_name" Type="varchar" Mode="In" />
         </Function>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="userInfoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="userInfoEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="userDetails" EntityType="userInfoModel.userDetail" />
           <FunctionImport Name="sp_DeleteUserDetails">
-            <Parameter Name="ID" Mode="In" Type="Decimal" />
+          <Parameter Name="ID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="sp_InserUserDetails">
             <Parameter Name="name" Mode="In" Type="String" />
@@ -57,10 +59,11 @@
             <Parameter Name="salary" Mode="In" Type="Decimal" />
             <Parameter Name="designation" Mode="In" Type="String" />
             <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="last_name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_SelectAllUserDetails" ReturnType="Collection(userInfoModel.sp_SelectAllUserDetails_Result)" />
           <FunctionImport Name="sp_SelectUserDetails" ReturnType="Collection(userInfoModel.sp_SelectUserDetails_Result)">
-            <Parameter Name="ID" Mode="In" Type="Decimal" />
+          <Parameter Name="ID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="sp_UpdateUserDetails">
             <Parameter Name="ID" Mode="In" Type="Decimal" />
@@ -69,6 +72,7 @@
             <Parameter Name="salary" Mode="In" Type="Decimal" />
             <Parameter Name="designation" Mode="In" Type="String" />
             <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="last_name" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="userDetail">
@@ -81,6 +85,7 @@
           <Property Name="salary" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="designation" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Type="String" Name="last_name" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <ComplexType Name="sp_SelectAllUserDetails_Result">
           <Property Type="String" Name="name" Nullable="true" MaxLength="100" />
@@ -105,6 +110,7 @@
           <EntitySetMapping Name="userDetails">
             <EntityTypeMapping TypeName="userInfoModel.userDetail">
               <MappingFragment StoreEntitySet="userDetails">
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="age" ColumnName="age" />

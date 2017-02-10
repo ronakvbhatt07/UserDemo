@@ -39,7 +39,7 @@ namespace UserDataAccess
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteUserDetails", iDParameter);
         }
     
-        public virtual int sp_InserUserDetails(string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB)
+        public virtual int sp_InserUserDetails(string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB, string last_name)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
@@ -61,7 +61,11 @@ namespace UserDataAccess
                 new ObjectParameter("DOB", dOB) :
                 new ObjectParameter("DOB", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InserUserDetails", nameParameter, ageParameter, salaryParameter, designationParameter, dOBParameter);
+            var last_nameParameter = last_name != null ?
+                new ObjectParameter("last_name", last_name) :
+                new ObjectParameter("last_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InserUserDetails", nameParameter, ageParameter, salaryParameter, designationParameter, dOBParameter, last_nameParameter);
         }
     
         public virtual ObjectResult<sp_SelectAllUserDetails_Result> sp_SelectAllUserDetails()
@@ -78,7 +82,7 @@ namespace UserDataAccess
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SelectUserDetails_Result>("sp_SelectUserDetails", iDParameter);
         }
     
-        public virtual int sp_UpdateUserDetails(Nullable<decimal> iD, string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB)
+        public virtual int sp_UpdateUserDetails(Nullable<decimal> iD, string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB, string last_name)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
@@ -104,7 +108,11 @@ namespace UserDataAccess
                 new ObjectParameter("DOB", dOB) :
                 new ObjectParameter("DOB", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateUserDetails", iDParameter, nameParameter, ageParameter, salaryParameter, designationParameter, dOBParameter);
+            var last_nameParameter = last_name != null ?
+                new ObjectParameter("last_name", last_name) :
+                new ObjectParameter("last_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateUserDetails", iDParameter, nameParameter, ageParameter, salaryParameter, designationParameter, dOBParameter, last_nameParameter);
         }
     }
 }
