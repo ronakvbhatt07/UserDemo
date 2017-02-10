@@ -39,7 +39,7 @@ namespace UserDataAccess
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteUserDetails", iDParameter);
         }
     
-        public virtual int sp_InserUserDetails(string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB, string last_name, string location)
+        public virtual int sp_InserUserDetails(string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB, string last_name,string location)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
@@ -69,7 +69,7 @@ namespace UserDataAccess
                 new ObjectParameter("location", location) :
                 new ObjectParameter("location", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InserUserDetails", nameParameter, ageParameter, salaryParameter, designationParameter, dOBParameter, last_nameParameter, locationParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InserUserDetails", nameParameter, ageParameter, salaryParameter, designationParameter, dOBParameter, last_nameParameter,locationParameter);
         }
     
         public virtual ObjectResult<sp_SelectAllUserDetails_Result> sp_SelectAllUserDetails()
@@ -86,7 +86,7 @@ namespace UserDataAccess
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SelectUserDetails_Result>("sp_SelectUserDetails", iDParameter);
         }
     
-        public virtual int sp_UpdateUserDetails(Nullable<decimal> iD, string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB, string last_name, string location)
+        public virtual int sp_UpdateUserDetails(Nullable<decimal> iD, string name, Nullable<decimal> age, Nullable<decimal> salary, string designation, Nullable<System.DateTime> dOB, string last_name,string location)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :

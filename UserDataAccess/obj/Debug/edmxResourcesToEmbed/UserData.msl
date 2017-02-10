@@ -4,6 +4,8 @@
     <EntitySetMapping Name="userDetails">
       <EntityTypeMapping TypeName="userInfoModel.userDetail">
         <MappingFragment StoreEntitySet="userDetails">
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="age" ColumnName="age" />

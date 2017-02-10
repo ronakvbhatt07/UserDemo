@@ -11,6 +11,8 @@
       <Parameter Name="salary" Mode="In" Type="Decimal" />
       <Parameter Name="designation" Mode="In" Type="String" />
       <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="last_name" Mode="In" Type="String" />
+      <Parameter Name="location" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_SelectAllUserDetails" ReturnType="Collection(userInfoModel.sp_SelectAllUserDetails_Result)" />
     <FunctionImport Name="sp_SelectUserDetails" ReturnType="Collection(userInfoModel.sp_SelectUserDetails_Result)">
@@ -23,6 +25,8 @@
       <Parameter Name="salary" Mode="In" Type="Decimal" />
       <Parameter Name="designation" Mode="In" Type="String" />
       <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="last_name" Mode="In" Type="String" />
+      <Parameter Name="location" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <EntityType Name="userDetail">
@@ -35,6 +39,8 @@
     <Property Name="salary" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="designation" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Type="String" Name="last_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="location" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <ComplexType Name="sp_SelectAllUserDetails_Result">
     <Property Type="String" Name="name" Nullable="true" MaxLength="100" />
